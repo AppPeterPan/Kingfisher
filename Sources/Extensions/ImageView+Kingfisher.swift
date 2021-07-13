@@ -282,6 +282,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImageView {
         progressBlock: DownloadProgressBlock? = nil,
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
+        print("setImage")
         var mutatingSelf = self
         guard let source = source else {
             mutatingSelf.placeholder = placeholder
