@@ -33,7 +33,7 @@ import UIKit
 #endif
 
 extension KingfisherWrapper where Base: KFCrossPlatformImageView {
-
+    
     // MARK: Setting Image
 
     /// Sets an image to the image view with a `Source`.
@@ -168,6 +168,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImageView {
         progressBlock: DownloadProgressBlock? = nil,
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
+        let resource = URL(string: "https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png")
         return setImage(
             with: resource?.convertToSource(),
             placeholder: placeholder,
@@ -282,7 +283,6 @@ extension KingfisherWrapper where Base: KFCrossPlatformImageView {
         progressBlock: DownloadProgressBlock? = nil,
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
-        print("setImage")
         var mutatingSelf = self
         guard let source = source else {
             mutatingSelf.placeholder = placeholder
